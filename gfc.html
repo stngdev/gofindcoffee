@@ -1,44 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Find my location</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.js"></script>
-<script src="script/fmc-script.js" type="text/javascript"></script>
+<script src="js/gfc-script.js" type="text/javascript"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 
 </head>
 <body>
 
-<div class="container">
-	<div class="inner-contaier">
-        <div id="location">Location:</div>
-        <div id="location-content">
-            Get your fix here:<br />
-     
-			<script id="entry-template" type="text/x-handlebars-template">  
-            <div class="store-results">
-                <div id="store-results-left">
-                	a
-                </div>
 
-                <div id="store-results-right">
-						<div id="store-title">
-							{{storetitle}}
-						</div>
-						<div id="store-address">
-							{{storeaddress}}
-						</div>
-						<div>
-							<div id="store-distance">{{storedistance}}</div>
-							<div id="store-raiting">{{storerating}}</div>
-						</div>				 
-                </div>
-            </div>
+
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-2">.col-lg-2</div>
+     	<div class="col-md-3">
+        	<div id="location">Location:</div>
+        </div>
+     	<div class="col-md-5" id="location-content">
+			<script id="entry-template" type="text/x-handlebars-template">  
+			<div>
+			<a style='display:block;' href="">
+				<div class="store-results">
+							<div id="store-title">
+								{{storetitle}}
+							</div>
+							<div id="store-address">
+								{{storeaddress}}
+							</div>
+							<div id="store-results-btm">
+								<div id="store-raiting">{{storerating}}</div>
+								<div id="store-distance">{{storedistance}}m</div>
+								<div class="clear"></div>	
+							</div>	
+											 
+				</div>
+			</a>
+			</div>
+			
 			</script>
         </div>
-    </div>
+        <div class="col-md-2">.col-lg-2</div>
+	</div>
 </div>
 </body>
 </html>

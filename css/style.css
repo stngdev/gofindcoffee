@@ -6,23 +6,24 @@ body{
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.container{
-	width:50%;
-	margin:0 auto;
+
+
+#store-raiting{
+	float:left;
 }
 
-#store-results-left, #store-results-right{
-	position:relative;
-	float:left;
-	width:50%;
+#store-distance{
+	float:right;
 }
 
-
-#store-distance, #store-raiting{
-	float:left;
+.clear{
+	clear:both;
 }
 
 
 .store-results{
 	display:none;
+	background-color:#CCC;
+	padding:20px;
+	margin-bottom:2px;
 }
