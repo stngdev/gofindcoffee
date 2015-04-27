@@ -1,0 +1,6 @@
+#gofindcoffee
+
+gofindcoffee is a simple web app that helps coffee lovers find their coffee fix. 
+This is a weekend project created by Stephen Ng, designer/developer based in Melbourne Australia.
+
+Hope this brings you lots of coffee happiness!
