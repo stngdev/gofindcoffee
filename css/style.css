@@ -23,7 +23,20 @@ body{
 
 .store-results{
 	display:none;
-	background-color:#CCC;
+	background-color:#E9E9E2;
 	padding:20px;
 	margin-bottom:2px;
+}
+
+a #location-link{
+	display:block;
+	text-decoration:none;
+}
+
+#location-content a{
+	text-decoration:none;
+}
+
+#location-link :hover{
+	background-color:#E9E9E9;
 }

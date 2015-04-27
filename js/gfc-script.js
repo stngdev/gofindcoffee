@@ -18,15 +18,21 @@ $(document).ready(function() {
 				//get location
 				getLocationName(lat,long);
 				
+				//get Weather
+				getWeather(lat, long);
+				
 				//get coffee
 				getCoffee (lat,long);
-				console.log(position);
+				
+				
 
 			});
 		}else{
 			alert("Your browser doesn't support Geolocation !");
 		}
 	}) ();
+	
+	//Get location from google API
 	
 	function getLocationName(lat,long){	
 		$.ajax({
@@ -39,6 +45,27 @@ $(document).ready(function() {
 			}
 		});
 	}	
+
+	//Get weather from forecast.io
+	
+	function getWeather(lat,long){
+		$.ajax({
+			type: 'GET',
+			dataType:"jsonp",
+			url: 'https://api.forecast.io/forecast/52c45da6ca60bbe55c46be1f482c7281/'+lat+','+long+'?units=si',
+			success: function(data){
+				console.log(data);
+				var temperature = data.currently.temperature
+				var temperaturew = Math.round(temperature*10)/10
+				var weather = data.currently.summary
+				
+				
+				$("#currenttmp").append(temperaturew);
+				$("#currentwht").append(weather);
+				
+			}
+		});
+	}
 
 	function getCoffee(lat,long){
 		$.ajax({
@@ -80,17 +107,23 @@ $(document).ready(function() {
 				$.each(coffeePlaces, function(index, element){
 					
 					var coffeeName = element.venue.name
-					var coffeeAddress = element.venue.location.address
+					var coffeeStreet = element.venue.location.formattedAddress[0]
+					var coffeeSurburb = element.venue.location.formattedAddress[1]
 					var coffeeDistance = element.venue.location.distance
 					var coffeeRating = element.venue.rating
+					var coffeeLat = element.venue.location.lat
+					var coffeeLng = element.venue.location.lng
 					//console.log(coffeePlaces[i].venue.name)
-					var source   = $("#entry-template").html();
+					var source   = $("#store-template").html();
 					var template = Handlebars.compile(source);
 				    var context = {
 					   storetitle: coffeeName, 
-					   storeaddress: coffeeAddress,
+					   storestreet: coffeeStreet,
+					   storesurburb: coffeeSurburb,
 					   storedistance: coffeeDistance,
-					   storerating: coffeeRating
+					   storerating: coffeeRating,
+					   coffeelat: coffeeLat,
+					   coffeelng: coffeeLng
 					   };
 				    var html    = template(context);
 				   

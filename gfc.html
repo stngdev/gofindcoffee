@@ -32,29 +32,27 @@
 	<div class="row">
     	<div class="col-md-2">.col-lg-2</div>
      	<div class="col-md-3">
-        	<div id="location">Location:</div>
+        		You are near <span id="location"></span>.<br>Weather is <span id="currentwht"></span>, <span id="currenttmp"></span>&#176;C
         </div>
      	<div class="col-md-5" id="location-content">
-			<script id="entry-template" type="text/x-handlebars-template">  
+			<script id="store-template" type="text/x-handlebars-template">  
 			<div>
-			<a style='display:block;' href="">
+			<a id="location-link" target='_blank' href="http://maps.google.com/maps?saddr=My+Location&daddr={{coffeelat}},{{coffeelng}}&dirflg=w">
 				<div class="store-results">
 							<div id="store-title">
 								{{storetitle}}
 							</div>
 							<div id="store-address">
-								{{storeaddress}}
+								{{storestreet}}
 							</div>
 							<div id="store-results-btm">
 								<div id="store-raiting">{{storerating}}</div>
 								<div id="store-distance">{{storedistance}}m</div>
 								<div class="clear"></div>	
-							</div>	
-											 
+							</div>					 
 				</div>
 			</a>
-			</div>
-			
+			</div>			
 			</script>
         </div>
         <div class="col-md-2">.col-lg-2</div>
