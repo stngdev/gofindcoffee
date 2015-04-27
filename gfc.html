@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Find my location</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.js"></script>
+<script src="script/fmc-script.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="container">
+	<div class="inner-contaier">
+        <div id="location">Location:</div>
+        <div id="location-content">
+            Get your fix here:<br />
+     
+			<script id="entry-template" type="text/x-handlebars-template">  
+            <div class="store-results">
+                <div id="store-results-left">
+                	a
+                </div>
+
+                <div id="store-results-right">
+						<div id="store-title">
+							{{storetitle}}
+						</div>
+						<div id="store-address">
+							{{storeaddress}}
+						</div>
+						<div>
+							<div id="store-distance">{{storedistance}}</div>
+							<div id="store-raiting">{{storerating}}</div>
+						</div>				 
+                </div>
+            </div>
+			</script>
+        </div>
+    </div>
+</div>
+</body>
+</html>
