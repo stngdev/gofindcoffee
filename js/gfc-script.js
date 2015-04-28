@@ -1,31 +1,26 @@
 
 $(document).ready(function() {
-	 var itm = '';
+	
+	//Animate background color
+	setInterval(function(){
+		var theColors = ['#ef008c', '#00be59', '#654b9e', '#ff5432', '#00d8e6'];
+		//var theColor = theColors[Math.floor(Math.random()*theColors.length)];
+		$.each(theColors, function(index, color){
+			$('body').animate({backgroundColor: color}, 8000);
+			});
+	},8000);
 
-
-
-
-
-
-    (function getGeoLocation(){
-		  
+    (function getGeoLocation(){		  
 		if (navigator.geolocation){
-
 			navigator.geolocation.getCurrentPosition(function(position){
 				var lat = position.coords.latitude;
-                var long = position.coords.longitude;
-				
+                var long = position.coords.longitude;	
 				//get location
 				getLocationName(lat,long);
-				
 				//get Weather
 				getWeather(lat, long);
-				
 				//get coffee
 				getCoffee (lat,long);
-				
-				
-
 			});
 		}else{
 			alert("Your browser doesn't support Geolocation !");
@@ -33,7 +28,6 @@ $(document).ready(function() {
 	}) ();
 	
 	//Get location from google API
-	
 	function getLocationName(lat,long){	
 		$.ajax({
 			type: 'GET',
@@ -47,7 +41,6 @@ $(document).ready(function() {
 	}	
 
 	//Get weather from forecast.io
-	
 	function getWeather(lat,long){
 		$.ajax({
 			type: 'GET',
@@ -58,15 +51,13 @@ $(document).ready(function() {
 				var temperature = data.currently.temperature
 				var temperaturew = Math.round(temperature*10)/10
 				var weather = data.currently.summary
-				
-				
 				$("#currenttmp").append(temperaturew);
 				$("#currentwht").append(weather);
-				
 			}
 		});
 	}
-
+	
+	//Get coffee from foresquare api
 	function getCoffee(lat,long){
 		$.ajax({
 			type: 'GET',
@@ -76,36 +67,9 @@ $(document).ready(function() {
 				console.log(data2);
 				
 				var coffeePlaces = data2.response.groups[0].items
-				
-				//loop method
-				//l = coffeePlaces.length
-/*				for (var i=0; i<l;i++)
-				{
-					var coffeeName = coffeePlaces[i].venue.name
-					var coffeeAddress = coffeePlaces[i].venue.location.address
-					var coffeeDistance = coffeePlaces[i].venue.location.distance
-					var coffeeRating = coffeePlaces[i].venue.rating
-					//console.log(coffeePlaces[i].venue.name)
-					var source   = $("#entry-template").html();
-					var template = Handlebars.compile(source);
-				    var context = {
-					   storetitle: coffeeName, 
-					   storeaddress: coffeeAddress,
-					   storedistance: coffeeDistance,
-					   storerating: coffeeRating
-					   };
-				    var html    = template(context);
-				   
-				    $(template(context)).appendTo('#store-results-right');
-					
-					
-				}
-	*/			
 
-				
 				//each method
 				$.each(coffeePlaces, function(index, element){
-					
 					var coffeeName = element.venue.name
 					var coffeeStreet = element.venue.location.formattedAddress[0]
 					var coffeeSurburb = element.venue.location.formattedAddress[1]
@@ -113,7 +77,6 @@ $(document).ready(function() {
 					var coffeeRating = element.venue.rating
 					var coffeeLat = element.venue.location.lat
 					var coffeeLng = element.venue.location.lng
-					//console.log(coffeePlaces[i].venue.name)
 					var source   = $("#store-template").html();
 					var template = Handlebars.compile(source);
 				    var context = {
@@ -128,31 +91,12 @@ $(document).ready(function() {
 				    var html    = template(context);
 				   
 				    $('#location-content').append(template(context));
-					
 				})
 				
 				$('.store-results').each(function(i) {
 					  $(this).delay( i * 800 ).fadeIn( 1600 );
-				 });
-					
+				 });	
 			}
-
-	
 		});
-
-		
 	}
-	
-
-
-
-
-
-	
-
-
-
-
-
-	
 });
