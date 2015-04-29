@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Find my location</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
-
+<link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500|Lato' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
@@ -23,34 +23,36 @@
 </head>
 <body style="background-color:#0FC;">
 <div id="container">
-	<div class="row">
-    	<div class="col-md-2">.col-lg-2</div>
-     	<div class="col-md-3">
-        		You are near <span id="location"></span>.<br>Weather is <span id="currentwht"></span>, <span id="currenttmp"></span>&#176;C
+    	<div class="col-md-2"></div>
+     	<div class="col-md-2">
+        		<div id="logo">GO<br>FIND<br>COFFEE</div>
+                <div id="user-location-text">You are near<br><span id="location"></span>. Weather is <span id="currentwht"></span>, <span id="currenttmp"></span>&#176;C</div>
+                
         </div>
      	<div class="col-md-5" id="location-content">
 			<script id="store-template" type="text/x-handlebars-template">  
 			<div>
-			<a id="location-link" target='_blank' href="http://maps.google.com/maps?saddr=My+Location&daddr={{coffeelat}},{{coffeelng}}&dirflg=w">
-				<div class="store-results">
-							<div id="store-title">
-								{{storetitle}}
-							</div>
-							<div id="store-address">
-								{{storestreet}}
-							</div>
-							<div id="store-results-btm">
-								<div id="store-raiting">{{storerating}} / 10</div>
-								<div id="store-distance">{{storedistance}}m</div>
-								<div class="clear"></div>	
-							</div>					 
-				</div>
-			</a>
+				<a id="location-link" target='_blank' href="http://maps.google.com/maps?saddr=My+Location&daddr={{coffeelat}},{{coffeelng}}&dirflg=w">
+					<div class="store-results">
+								<div id="store-title">
+									{{storetitle}}
+								</div>
+								<div id="store-address">
+									{{storestreet}}
+								</div>
+								<div id="store-results-btm">
+									<div id="store-raiting">{{storerating}} / 10 <span id='face'>&#9786;</span></div>
+									<div id="store-distance">{{storedistance}}m <span id='arrow'>&#8594;</span></div>
+									<div class="clear"></div>	
+								</div>					 
+					</div>
+				</a>
 			</div>			
 			</script>
         </div>
-        <div class="col-md-2">.col-lg-2</div>
-	</div>
+        <div class="col-md-3"></div>
+		<div class="clear"></div>
 </div>
+
 </body>
 </html>

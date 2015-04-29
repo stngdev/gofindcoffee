@@ -2,6 +2,7 @@
 $(document).ready(function() {
 	
 	//Animate background color
+	/*
 	setInterval(function(){
 		var theColors = ['#ef008c', '#00be59', '#654b9e', '#ff5432', '#00d8e6'];
 		//var theColor = theColors[Math.floor(Math.random()*theColors.length)];
@@ -9,7 +10,8 @@ $(document).ready(function() {
 			$('body').animate({backgroundColor: color}, 8000);
 			});
 	},8000);
-
+	*/
+	
     (function getGeoLocation(){		  
 		if (navigator.geolocation){
 			navigator.geolocation.getCurrentPosition(function(position){
@@ -35,7 +37,25 @@ $(document).ready(function() {
 			success: function(data){
 				console.log(data);
 				var placeName = data.results[1].formatted_address
-				$("#location").append(placeName);
+				var streetNo = data.results[1].address_components[0].short_name
+				var streetName = data.results[1].address_components[1].short_name
+				var surburbName = data.results[1].address_components[2].short_name
+				var stateName = data.results[1].address_components[3].short_name
+				var stateNo = data.results[1].address_components[5].short_name
+				var address = "";
+				
+				(function getAddress(){
+					address += streetNo +' ';
+					address += streetName +', ';
+					address += surburbName +' ';
+					address += stateName +' ';
+					address += stateNo;
+				})();
+				
+				console.log(address)
+				
+				
+				$("#location").append(address);
 			}
 		});
 	}	
@@ -62,7 +82,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'GET',
 			dataType: "json",
-			url: 'https://api.foursquare.com/v2/venues/explore?client_id=KWKGYHXL2IGHDM2KVPEXUOJIABE3G1IW3W1SMB42HSS531BW&client_secret=0WYRHOQ0EQQDUT2V12SPGZ1TIFTRCNVPWVYRO23JXPM1U1J3&v=20130815&ll='+lat+','+long+'&llAcc=1000.0&radius=1000&section=coffee&venuePhotos=1&limit=10',
+			url: 'https://api.foursquare.com/v2/venues/explore?client_id=KWKGYHXL2IGHDM2KVPEXUOJIABE3G1IW3W1SMB42HSS531BW&client_secret=0WYRHOQ0EQQDUT2V12SPGZ1TIFTRCNVPWVYRO23JXPM1U1J3&v=20130815&ll='+lat+','+long+'&llAcc=1000.0&radius=800&section=coffee&venuePhotos=1&limit=7',
 			success: function(data2){
 				console.log(data2);
 				
