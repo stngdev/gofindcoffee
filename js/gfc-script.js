@@ -4,12 +4,12 @@ $(document).ready(function() {
 	//Animate background color
 	/*
 	setInterval(function(){
-		var theColors = ['#ef008c', '#00be59', '#654b9e', '#ff5432', '#00d8e6'];
+		var theColors = ['#9994fe', '#fe94f3', '#fef594', '#94fea1'];
 		//var theColor = theColors[Math.floor(Math.random()*theColors.length)];
 		$.each(theColors, function(index, color){
-			$('body').animate({backgroundColor: color}, 8000);
+			$('body,#user-location-text').css("backgroundColor", color);
 			});
-	},8000);
+	});
 	*/
 	
     (function getGeoLocation(){		  
