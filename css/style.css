@@ -174,7 +174,15 @@ a #location-link{
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (max-width : 480px) {
-
+    	.mobile-contain #user-location-text{
+			width:130px!important;
+		}
+		#user-location-text{
+			font-size: 12px!important;
+		}
+		.store-results{
+			padding: 12px 8px!important;
+		}
     }
 
     /* Custom, iPhone Retina */ 
