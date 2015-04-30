@@ -99,3 +99,59 @@ a #location-link{
 #location-link :hover{
 	background-color:#E9E9E9;
 }
+
+.mobile-top{
+	display:none;
+}
+
+
+.header-mobile{
+	float:left;	
+}
+
+
+.mobile-contain #user-location-text{
+	width:210px;
+}
+
+.mobile-contain #logo{
+	width:160px;
+}
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+		.desktop-side{
+			display:none!important;
+		}
+		
+		.mobile-top{
+			display:block!important;
+		}
+		
+		
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        
+    }
+

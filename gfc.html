@@ -21,13 +21,21 @@
 <![endif]-->
 
 </head>
-<body style="background-color:#0FC;">
+<body style="background-color:#fff;">
 <div id="container">
     	<div class="col-md-2"></div>
      	<div class="col-md-2">
+        	<div class="desktop-side">
         		<div id="logo">GO<br>FIND<br>COFFEE</div>
                 <div id="user-location-text">You are near<br><span id="location"></span>. Weather is <span id="currentwht"></span>, <span id="currenttmp"></span>&#176;C</div>
-                
+            </div>   
+        	<div class="mobile-top">
+                <div class="mobile-contain">
+                    <div class="header-mobile" id="logo">GO<br>FIND<br>COFFEE</div>
+                    <div class="header-mobile" id="user-location-text">You are near<br><span id="location2"></span>. Weather is <span id="currentwht2"></span>, <span id="currenttmp2"></span>&#176;C</div>
+                </div>
+                <div class="clear"></div>
+            </div>   
         </div>
      	<div class="col-md-5" id="location-content">
 			<script id="store-template" type="text/x-handlebars-template">  

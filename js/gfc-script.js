@@ -36,12 +36,13 @@ $(document).ready(function() {
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&key=AIzaSyCDSO9ygTC_qmhoiKiWky9TQR7MT8AU25I',
 			success: function(data){
 				console.log(data);
-				var placeName = data.results[1].formatted_address
-				var streetNo = data.results[1].address_components[0].short_name
-				var streetName = data.results[1].address_components[1].short_name
-				var surburbName = data.results[1].address_components[2].short_name
-				var stateName = data.results[1].address_components[3].short_name
-				var stateNo = data.results[1].address_components[5].short_name
+
+				var placeName = data.results[0].formatted_address
+				var streetNo = data.results[0].address_components[0].short_name
+				var streetName = data.results[0].address_components[1].short_name
+				var surburbName = data.results[0].address_components[2].short_name
+				var stateName = data.results[0].address_components[3].short_name
+				var stateNo = data.results[0].address_components[5].short_name
 				var address = "";
 				
 				(function getAddress(){
@@ -52,10 +53,9 @@ $(document).ready(function() {
 					address += stateNo;
 				})();
 				
-				console.log(address)
 				
+				$("#location, #location2").append(address);
 				
-				$("#location").append(address);
 			}
 		});
 	}	
@@ -71,8 +71,8 @@ $(document).ready(function() {
 				var temperature = data.currently.temperature
 				var temperaturew = Math.round(temperature*10)/10
 				var weather = data.currently.summary
-				$("#currenttmp").append(temperaturew);
-				$("#currentwht").append(weather);
+				$("#currenttmp, #currenttmp2").append(temperaturew);
+				$("#currentwht, #currentwht2").append(weather);
 			}
 		});
 	}
