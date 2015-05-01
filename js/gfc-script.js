@@ -82,7 +82,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'GET',
 			dataType: "json",
-			url: 'https://api.foursquare.com/v2/venues/explore?client_id=KWKGYHXL2IGHDM2KVPEXUOJIABE3G1IW3W1SMB42HSS531BW&client_secret=0WYRHOQ0EQQDUT2V12SPGZ1TIFTRCNVPWVYRO23JXPM1U1J3&v=20130815&ll='+lat+','+long+'&llAcc=1000.0&radius=800&section=coffee&venuePhotos=1&limit=7',
+			url: 'https://api.foursquare.com/v2/venues/explore?client_id=KWKGYHXL2IGHDM2KVPEXUOJIABE3G1IW3W1SMB42HSS531BW&client_secret=0WYRHOQ0EQQDUT2V12SPGZ1TIFTRCNVPWVYRO23JXPM1U1J3&v=20130815&ll='+lat+','+long+'&llAcc=1000.0&radius=800&section=coffee&venuePhotos=1&limit=40',
 			success: function(data2){
 				console.log(data2);
 				
@@ -109,14 +109,55 @@ $(document).ready(function() {
 					   coffeelng: coffeeLng
 					   };
 				    var html    = template(context);
+				
 				   
 				    $('#location-content').append(template(context));
+					/*
+					//Coffee ratings fiter
+					(function showRating(){
+						if(coffeeRating >= 7){
+							console.log('good')
+							$('html #face').html('&#9786;')
+						}else if(coffeeRating >= 4 && coffeeRating <= 6){
+							console.log('ok')
+							$('html #face').text('ok')
+						}else if(coffeeRating >= 1 && coffeeRating <= 3){
+							console.log('bad')
+							$('html #face').text('bad')
+						}else{
+							console.log('No Ratings')
+							$('html #face').text('No Ratings')
+						}				
+					})();
+					*/
 				})
 				
-				$('.store-results').each(function(i) {
-					  $(this).delay( i * 800 ).fadeIn( 1600 );
-				 });	
+				$('.store-results').each(function(i, el) {
+					  $(el).delay( i * 800 ).fadeIn( 1600 );
+					  
+					  var valno = $(this).find('#store-rating-no').text()
+					  var valnoFace = $(this).find('#face')
+					  console.log(valno)
+					  
+					//Coffee ratings filter
+						if(valno >= 7){
+							console.log('good')
+							$(valnoFace).html('<i class="fa fa-smile-o fa-1"></i>')
+						}else if(valno >= 4 && valno <= 6.9){
+							console.log('ok')
+							$(valnoFace).html('<i class="fa fa-meh-o fa-1"></i>')
+						}else if(valno >= 1 && valno <= 3.9){
+							console.log('bad')
+							$(valnoFace).html('<i class="fa fa-frown-o fa-1"></i>')
+						}else{
+							console.log('No Ratings')
+							$(valnoFace).html('n/a')
+						}				
+					  
+				});	
+
 			}
-		});
+		});		
 	}
 });
+

@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500|Lato' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -49,7 +50,9 @@
 									{{storestreet}}
 								</div>
 								<div id="store-results-btm">
-									<div id="store-raiting">{{storerating}} / 10 <span id='face'>&#9786;</span></div>
+									<div id="store-raiting">
+										<span id="store-rating-no">{{storerating}} </span> / 10 <span id='face'></span>
+									</div>
 									<div id="store-distance">{{storedistance}}m <span id='arrow'>&#8594;</span></div>
 									<div class="clear"></div>	
 								</div>					 
