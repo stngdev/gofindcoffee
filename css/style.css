@@ -19,10 +19,10 @@ body{
 #logo{
 	font-family:'Dosis', Arial, Helvetica, sans-serif;
 	font-weight:300;
-  	font-size: 34px;
+  	font-size: 35px;
   	background-color: #000000;
   	color: #fff;
-  	padding: 11px 0 12px 17px;
+  	padding: 13px 0 13px 17px;
   	line-height: 1.3em;
   	letter-spacing: 3px;
 }
@@ -33,7 +33,7 @@ body{
 	letter-spacing:2px;
 	padding: 18px 0 0 12px;
 	line-height:1.7em;
-	background-color: #ffffff;
+	background-color: #0DF2CF;
 }
 
 #store-title{
@@ -57,10 +57,10 @@ body{
 	font-weight:300;
 	font-size:20px;
 	letter-spacing:3px;
-	padding-top:15px;
+	padding-top:25px;
 }
 
-#store-raiting{
+#store-rating{
 	float:left;
 
 }
@@ -71,11 +71,11 @@ body{
 }
 
 #arrow{
-	font-size: 26px;
+	font-size: 24px;
 }
 
 #face{
-	font-size: 23px;
+	font-size: 24px;
 }
 
 .clear{
@@ -90,6 +90,7 @@ body{
 	margin-bottom:2px;
 	opacity:1;
 	color:#000;
+	opacity:0.9;
 }
 
 a #location-link{
