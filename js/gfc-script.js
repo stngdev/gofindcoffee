@@ -137,6 +137,7 @@ $(document).ready(function() {
 					  
 					  var valno = $(this).find('#store-rating-no').text()
 					  var valnoFace = $(this).find('#face')
+					  var valnoText = $(this).find('#store-rating')
 					  console.log(valno)
 					  
 					//Coffee ratings filter
@@ -151,7 +152,7 @@ $(document).ready(function() {
 							$(valnoFace).html('<i class="fa fa-frown-o fa-1"></i>')
 						}else{
 							console.log('No Ratings')
-							$(valnoFace).html('n/a')
+							$(valnoText).html('n/a')
 						}				
 					  
 				});	
