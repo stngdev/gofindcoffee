@@ -5,6 +5,9 @@ body{
 	width:100%;
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	background-color:#0FC;
+	background-image: url("../images/find-coffee-bg.png");
+	background-repeat: repeat;
+	background-position: 10px -15px;
 }
 
 #container{
@@ -15,12 +18,13 @@ body{
 
 #logo{
 	font-family:'Dosis', Arial, Helvetica, sans-serif;
-	font-weight:400;
+	font-weight:300;
   	font-size: 34px;
   	background-color: #000000;
-  	color: #000;
-  	padding: 9px 0 9px 12px;
+  	color: #fff;
+  	padding: 11px 0 12px 17px;
   	line-height: 1.3em;
+  	letter-spacing: 3px;
 }
 
 #user-location-text{
@@ -29,18 +33,19 @@ body{
 	letter-spacing:2px;
 	padding: 18px 0 0 12px;
 	line-height:1.7em;
+	background-color: #ffffff;
 }
 
 #store-title{
 	font-family:'Dosis', Arial, Helvetica, sans-serif;
-	font-weight:400;
+	font-weight:300;
 	font-size:30px;
 	letter-spacing:3px;
 }
 
 #store-address{
 	font-family:'Dosis', Arial, Helvetica, sans-serif;
-	font-weight:400;
+	font-weight:300;
 	font-size:20px;
 	letter-spacing:3px;
 	padding-top:5px;
@@ -49,7 +54,7 @@ body{
 
 #store-results-btm{
 	font-family:'Dosis', Arial, Helvetica, sans-serif;
-	font-weight:400;
+	font-weight:300;
 	font-size:20px;
 	letter-spacing:3px;
 	padding-top:15px;
@@ -80,10 +85,10 @@ body{
 
 .store-results{
 	display:none;
-	background-color:#FFFFFF;
-	padding:10px;
+	background-color:#f9f9f9;
+	padding:12px 20px;
 	margin-bottom:2px;
-	opacity:0.8;
+	opacity:1;
 	color:#000;
 }
 
@@ -97,7 +102,8 @@ a #location-link{
 }
 
 #location-link :hover{
-	background-color:#E9E9E9;
+	background-color:#ffffff;
+	opacity: 0.9;
 }
 
 .mobile-top{
@@ -118,6 +124,10 @@ a #location-link{
 	width:160px;
 }
 
+.mobile-top{
+	margin-bottom: 10px;
+}
+
 
 /*==========  Non-Mobile First Method  ==========*/
 
@@ -136,7 +146,24 @@ a #location-link{
 			display:block!important;
 		}
 		
-		
+		.mobile-hide{
+			display: none!important;
+		}
+
+		#container{
+			margin-top: 0;
+		}
+
+		#user-location-text{
+			position: absolute!important;
+			bottom: 0!important;
+			margin-left: 160px!important;
+			padding: 0 0 0 11px!important;
+		}
+
+		.store-results{
+			opacity: 0.9;
+		}
 
     }
 
@@ -147,7 +174,15 @@ a #location-link{
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (max-width : 480px) {
-
+    	.mobile-contain #user-location-text{
+			width:130px!important;
+		}
+		#user-location-text{
+			font-size: 12px!important;
+		}
+		.store-results{
+			padding: 12px 8px!important;
+		}
     }
 
     /* Custom, iPhone Retina */ 
