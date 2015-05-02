@@ -111,7 +111,7 @@ $(document).ready(function() {
 				    var html    = template(context);
 				
 				   
-				    $('#location-content').append(template(context));
+				    $('#location-content-container').append(template(context));
 				})
 				
 				$('.store-results').each(function(i, el) {
@@ -124,20 +124,20 @@ $(document).ready(function() {
 					  
 					//Coffee ratings filter
 						if(valno >= 7){
-							console.log('good')
 							$(valnoFace).html('<i class="fa fa-smile-o fa-1"></i>')
 						}else if(valno >= 4 && valno <= 6.9){
-							console.log('ok')
 							$(valnoFace).html('<i class="fa fa-meh-o fa-1"></i>')
 						}else if(valno >= 1 && valno <= 3.9){
-							console.log('bad')
 							$(valnoFace).html('<i class="fa fa-frown-o fa-1"></i>')
 						}else{
-							console.log('No Ratings')
 							$(valnoText).html('n/a<span id="noratings">.</span>')
 						}				
-					  
-				});	
+				}).promise().done(function(){
+									$('.credits').fadeIn()
+									console.log('done');
+								});	
+
+
 
 			}
 		});		

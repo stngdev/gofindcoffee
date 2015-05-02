@@ -12,7 +12,7 @@ body{
 
 #container{
 	margin-top:45px;
-	margin-bottom:100px;
+	margin-bottom:40px;
 }
 
 
@@ -130,6 +130,14 @@ a #location-link{
 
 }
 
+.credits{
+	font-family:'Lato', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin-top: 60px;
+	display: none;
+}
+
+
 
 /*==========  Non-Mobile First Method  ==========*/
 
@@ -213,6 +221,12 @@ a #location-link{
 
 		#face, #arrow, #noratings{
 			font-size: 20px!important;
+		}
+
+		.credits{
+			font-size: 12px;
+			margin-top: 40px;
+
 		}
 
     
