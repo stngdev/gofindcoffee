@@ -7,7 +7,7 @@ body{
 	background-color:#0FC;
 	background-image: url("../images/find-coffee-bg.png");
 	background-repeat: repeat;
-	background-position: 10px -15px;
+	background-position: 0px -15px;
 }
 
 #container{
@@ -22,7 +22,7 @@ body{
   	font-size: 35px;
   	background-color: #000000;
   	color: #fff;
-  	padding: 13px 0 13px 17px;
+  	padding: 11px 0 12px 17px;
   	line-height: 1.3em;
   	letter-spacing: 3px;
 }
@@ -33,7 +33,7 @@ body{
 	letter-spacing:2px;
 	padding: 18px 0 0 12px;
 	line-height:1.7em;
-	background-color: #0DF2CF;
+	background-color: #ffffff;
 }
 
 #store-title{
@@ -67,14 +67,10 @@ body{
 
 #store-distance{
 	float:right;
-	padding-top:3px;
+	padding-top:1px;
 }
 
-#arrow{
-	font-size: 24px;
-}
-
-#face{
+#arrow, #noratings, #face{
 	font-size: 24px;
 }
 
@@ -85,12 +81,11 @@ body{
 
 .store-results{
 	display:none;
-	background-color:#f9f9f9;
+	background-color: rgba(249,249,249, .9);
 	padding:12px 20px;
 	margin-bottom:2px;
-	opacity:1;
 	color:#000;
-	opacity:0.9;
+
 }
 
 a #location-link{
@@ -103,7 +98,8 @@ a #location-link{
 }
 
 #location-link :hover{
-	background-color:#ffffff;
+	background-color:#000000;
+	color: #ffffff;
 	opacity: 0.9;
 }
 
@@ -127,6 +123,11 @@ a #location-link{
 
 .mobile-top{
 	margin-bottom: 10px;
+}
+
+#noratings{
+	color: #ffffff;
+
 }
 
 
@@ -163,7 +164,7 @@ a #location-link{
 		}
 
 		.store-results{
-			opacity: 0.9;
+			background-color: rgba(242,242,242,0.85)!important;
 		}
 
     }
@@ -171,23 +172,55 @@ a #location-link{
     /* Small Devices, Tablets */
     @media only screen and (max-width : 768px) {
 
+
     }
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (max-width : 480px) {
+
     	.mobile-contain #user-location-text{
 			width:130px!important;
 		}
 		#user-location-text{
-			font-size: 12px!important;
+			font-size: 10px!important;
 		}
 		.store-results{
-			padding: 12px 8px!important;
+			padding: 12px 12px!important;
+
 		}
+		#logo{
+			font-size: 28px!important;
+			padding: 10px 0 10px 11px!important;
+			line-height: 1.2em!important;
+
+		}
+		.mobile-contain #logo{
+			width: 130px!important;
+		}
+		#user-location-text{
+			margin-left: 130px!important;
+		}
+		.mobile-contain #user-location-text{
+			width:160px!important;
+		}
+
+		#store-title{
+			font-size: 23px!important;
+		}
+		#store-address, #store-results-btm, #store-distance{
+			font-size: 16px!important;
+		}
+
+		#face, #arrow, #noratings{
+			font-size: 20px!important;
+		}
+
+    
     }
 
     /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
+
         
     }
 

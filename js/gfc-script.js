@@ -112,24 +112,6 @@ $(document).ready(function() {
 				
 				   
 				    $('#location-content').append(template(context));
-					/*
-					//Coffee ratings fiter
-					(function showRating(){
-						if(coffeeRating >= 7){
-							console.log('good')
-							$('html #face').html('&#9786;')
-						}else if(coffeeRating >= 4 && coffeeRating <= 6){
-							console.log('ok')
-							$('html #face').text('ok')
-						}else if(coffeeRating >= 1 && coffeeRating <= 3){
-							console.log('bad')
-							$('html #face').text('bad')
-						}else{
-							console.log('No Ratings')
-							$('html #face').text('No Ratings')
-						}				
-					})();
-					*/
 				})
 				
 				$('.store-results').each(function(i, el) {
@@ -152,7 +134,7 @@ $(document).ready(function() {
 							$(valnoFace).html('<i class="fa fa-frown-o fa-1"></i>')
 						}else{
 							console.log('No Ratings')
-							$(valnoText).html('n/a')
+							$(valnoText).html('n/a<span id="noratings">.</span>')
 						}				
 					  
 				});	
