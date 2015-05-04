@@ -132,9 +132,11 @@ a #location-link{
 
 .credits{
 	font-family:'Lato', Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	margin-top: 60px;
+	font-size: 12px;
+	margin-top: 30px;
 	display: none;
+	background-color: #fff;
+	width: 143px;
 }
 
 #no-results-face{
