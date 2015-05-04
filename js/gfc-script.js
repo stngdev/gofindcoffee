@@ -35,7 +35,7 @@ $(document).ready(function() {
 			type: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&key=AIzaSyCDSO9ygTC_qmhoiKiWky9TQR7MT8AU25I',
 			success: function(data){
-				console.log(data);
+				//console.log(data);
 
 				var placeName = data.results[0].formatted_address
 				var streetNo = data.results[0].address_components[0].short_name
@@ -67,7 +67,7 @@ $(document).ready(function() {
 			dataType:"jsonp",
 			url: 'https://api.forecast.io/forecast/52c45da6ca60bbe55c46be1f482c7281/'+lat+','+long+'?units=si',
 			success: function(data){
-				console.log(data);
+				//console.log(data);
 				var temperature = data.currently.temperature
 				var temperaturew = Math.round(temperature*10)/10
 				var weather = data.currently.summary
@@ -84,7 +84,7 @@ $(document).ready(function() {
 			dataType: "json",
 			url: 'https://api.foursquare.com/v2/venues/explore?client_id=KWKGYHXL2IGHDM2KVPEXUOJIABE3G1IW3W1SMB42HSS531BW&client_secret=0WYRHOQ0EQQDUT2V12SPGZ1TIFTRCNVPWVYRO23JXPM1U1J3&v=20130815&ll='+lat+','+long+'&llAcc=1000.0&radius=800&section=coffee&venuePhotos=1&limit=10',
 			success: function(data2){
-				console.log(data2);
+				//console.log(data2);
 				
 				var coffeePlaces = data2.response.groups[0].items
 
@@ -120,7 +120,7 @@ $(document).ready(function() {
 					  var valno = $(this).find('#store-rating-no').text()
 					  var valnoFace = $(this).find('#face')
 					  var valnoText = $(this).find('#store-rating')
-					  console.log(valno)
+					  //console.log(valno)
 					  
 					//Coffee ratings filter
 						if(valno >= 7){
@@ -134,7 +134,6 @@ $(document).ready(function() {
 						}				
 				}).promise().done(function(){
 									$('.credits').fadeIn()
-									console.log('done');
 								});	
 
 
