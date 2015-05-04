@@ -165,6 +165,25 @@ a #location-link{
 
 }
 
+#pre-loader-container-text{
+	font-family: 'Dosis', Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 27px;
+	letter-spacing: 3px;
+	float: left;
+	padding: 3px 0 0 8px;
+}
+
+#pre-loader-container{
+	background-color: rgba(255,255,255, .8);
+	width: 205px;
+}
+
+#pre-loader{
+	float: left;
+}
+
+
 
 /*==========  Non-Mobile First Method  ==========*/
 
@@ -254,6 +273,17 @@ a #location-link{
 			font-size: 12px;
 			margin-top: 40px;
 
+		}
+
+		#location-link :hover{
+			background-color:#ffffff!important;
+			color: #000000!important;
+			opacity: 1!important;
+		}
+
+		#pre-loader-container-text{
+			font-size: 23px!important;
+			padding-top: 8px!important;
 		}
 
     

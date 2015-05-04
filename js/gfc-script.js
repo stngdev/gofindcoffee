@@ -117,6 +117,7 @@ $(document).ready(function() {
 						
 						$('.store-results').each(function(i, el) {
 							  $(el).delay( i * 800 ).fadeIn( 1600 );
+							  $('#pre-loader-container').fadeOut(100);
 							  
 							  var valno = $(this).find('#store-rating-no').text()
 							  var valnoFace = $(this).find('#face')
