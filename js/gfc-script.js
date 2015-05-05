@@ -35,7 +35,7 @@ $(document).ready(function() {
 			type: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&key=AIzaSyCDSO9ygTC_qmhoiKiWky9TQR7MT8AU25I',
 			success: function(data){
-				console.log(data);
+				//console.log(data);
 
 				var placeName = data.results[0].formatted_address
 				var streetNo = data.results[0].address_components[0].short_name
@@ -67,7 +67,7 @@ $(document).ready(function() {
 			dataType:"jsonp",
 			url: 'https://api.forecast.io/forecast/52c45da6ca60bbe55c46be1f482c7281/'+lat+','+long+'?units=si',
 			success: function(data){
-				console.log(data);
+				//console.log(data);
 				var temperature = data.currently.temperature
 				var temperaturew = Math.round(temperature*10)/10
 				var weather = data.currently.summary
@@ -82,13 +82,12 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'GET',
 			dataType: "json",
-			url: 'https://api.foursquare.com/v2/venues/explore?client_id=KWKGYHXL2IGHDM2KVPEXUOJIABE3G1IW3W1SMB42HSS531BW&client_secret=0WYRHOQ0EQQDUT2V12SPGZ1TIFTRCNVPWVYRO23JXPM1U1J3&v=20130815&ll='+lat+','+long+'&llAcc=1000.0&radius=70&section=coffee&venuePhotos=1&limit=10',
+			url: 'https://api.foursquare.com/v2/venues/explore?client_id=KWKGYHXL2IGHDM2KVPEXUOJIABE3G1IW3W1SMB42HSS531BW&client_secret=0WYRHOQ0EQQDUT2V12SPGZ1TIFTRCNVPWVYRO23JXPM1U1J3&v=20130815&ll='+lat+','+long+'&llAcc=1000.0&radius=800&section=coffee&venuePhotos=1&limit=10',
 			success: function(data2){
-				console.log(data2);
+				//console.log(data2);
 				
 				var coffeePlaces = data2.response.groups[0].items
 
-				
 				if (coffeePlaces.length > 0){
 						//each method
 						$.each(coffeePlaces, function(index, element){
@@ -118,6 +117,7 @@ $(document).ready(function() {
 						
 						$('.store-results').each(function(i, el) {
 							  $(el).delay( i * 800 ).fadeIn( 1600 );
+							  $('#pre-loader-container').fadeOut(100);
 							  
 							  var valno = $(this).find('#store-rating-no').text()
 							  var valnoFace = $(this).find('#face')
@@ -137,7 +137,6 @@ $(document).ready(function() {
 						}).promise().done(function(){
 											$('.credits').fadeIn()
 										});	
-
 				}else{
 					$('#no-results-container').fadeIn(1000, function(){
 											$('.credits').fadeIn()
